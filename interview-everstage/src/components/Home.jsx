@@ -1,20 +1,19 @@
-import React, {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { Card } from './Card';
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
+import { Card } from './Card'
 
 export const Home = () => {
-
-  const [result, setResult] = useState([]);
-  const [info, setInfo] = useState({});
+  const [result, setResult] = useState([])
+  const [info, setInfo] = useState({})
 
   useEffect(() => {
-    getData("https://rickandmortyapi.com/api/character");
+    getData('https://rickandmortyapi.com/api/character')
   }, [])
 
-  const getData = async (url) => {
-    const res = await axios(url);
-    setInfo(res.data.info);
+  const getData = async url => {
+    const res = await axios(url)
+    setInfo(res.data.info)
     setResult(res.data.results)
   }
 
@@ -27,25 +26,34 @@ export const Home = () => {
   }
 
   return (
-    <div>
-      <div className='flex gap-8 p-4 justify-between'>
-       <button className='py-3 px-4 bg-blue-400 rounded-md' onClick={prevHandler}>Prev</button>
-        <button className='py-3 px-4 bg-blue-400 rounded-md' onClick={nextHandler}>Next</button>
+    <div className='flex flex-col justify-center items-center'>
+      <div className='flex gap-8 p-4 justify-between w-[80%] items-center'>
+        <button
+          className='py-3 px-4 bg-blue-400 rounded-md'
+          onClick={prevHandler}
+        >
+          Prev
+        </button>
+        <button
+          className='py-3 px-4 bg-blue-400 rounded-md'
+          onClick={nextHandler}
+        >
+          Next
+        </button>
       </div>
-      <div className='flex flex-wrap'>
-        {result.map((res, index) => {
-          console.log(res.url);
-          return (
-            <Link to={`/char-details/${res.id}`}>
-              <Card res={res} key={index} />
-            </Link>
-          )
-        })}
+      <div className='flex justify-center items-center'>
+        <div className='flex flex-wrap w-[63%] justify-between'>
+          {result.map((res, index) => {
+            return (
+              <Link to={`/char-details/${res.id}`}>
+                <Card res={res} key={index} />
+              </Link>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
 }
-
-
 
 // https://rickandmortyapi.com/api/character/6

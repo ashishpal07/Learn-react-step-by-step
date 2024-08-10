@@ -3,15 +3,14 @@ import React from 'react'
 export const Card = ({res}) => {
 
   return (
-    <div className='flex space-x-3 p-4 bg-slate-500 m-3 rounded-md'>
+    <div className='flex bg-slate-500 m-3 rounded-md w-[500px]'>
       <div>
-        <img className='min-w-[100px] h-[100px] rounded-sm' src={res.image} alt={res.name} />
+        <img className='min-w-[130px] h-[130px] rounded-sm' src={res.image} alt={res.name} />
       </div>
-      <div>
-        <p>{res.name}</p>
-        <p>{res.status}</p>
-        <p>{res.species}</p>
-        <p>{res.url}</p>
+      <div className='text-white text-xl ml-8'>
+        <div className='font-bold'>{res.name}</div>
+        <div>{res.status}</div>
+        <div>{res.species}</div>
       </div>
     </div>
   )
