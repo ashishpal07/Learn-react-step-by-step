@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 4000;
 import userRoutes from "./routes/userRoutes";
 import taskRoutes from "./routes/taskRoutes";
 
-app.use("/api/users", userRoutes);
+app.use("/api", userRoutes);
 app.use("/api/tasks", taskRoutes);
 
 DataSource.initialize().then(async () => {
