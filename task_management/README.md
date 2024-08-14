@@ -114,3 +114,6 @@ http://localhost:<your_port_number>/api/tasks?query=<string_value> => GET
 
 you will get respose give all searched task based on <string_value>
 ```
+Approach : 
+I have implemented the user APIs & have given role based access and assing only one role per user that can be either (User | Admin)
+I have assume that searching, filter & getting single task API can be access via admins only & every user can (CRUD) task for himself if they are authenticated users.
