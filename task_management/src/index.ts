@@ -14,11 +14,13 @@ import taskRoutes from "./routes/taskRoutes";
 app.use("/api", userRoutes);
 app.use("/api/tasks", taskRoutes);
 
-DataSource.initialize().then(async () => {
+DataSource.initialize().then(() => {
     app.listen(PORT, () => {
         console.log(`server running on port ${PORT}`);
     });
-}).catch((err) => console.log(err));
+})
+.then(() => console.log("Connected to database successfully!"))
+.catch((err) => console.log(err));
 
 
 
