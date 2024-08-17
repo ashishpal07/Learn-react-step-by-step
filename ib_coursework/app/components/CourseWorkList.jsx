@@ -16,7 +16,7 @@ export const CourseworkList = () => {
   return (
     <div className="px-3 py-4 bg-blue-50 rounded-md mt-7">
       <h2 className="text-xl font-semibold mb-4">My coursework</h2>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="gap-4 md:grid grid-cols-2">
         {files.slice(0, displayCount).map((file, index) => {
           return (<Coursework file={file} key={index} />)
         })}

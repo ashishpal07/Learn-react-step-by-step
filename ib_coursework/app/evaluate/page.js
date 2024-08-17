@@ -17,7 +17,7 @@ export default function evaluate () {
           <PerformanceSideBar />
         </div>
       </div>
-      <div className='w-[5%]'>
+      <div className='md:w-[5%]'>
         <Streak />
       </div>
     </div>

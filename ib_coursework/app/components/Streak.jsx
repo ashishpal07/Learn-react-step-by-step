@@ -6,7 +6,7 @@ import cardsIcon from '../../public/cardsLogo.png'
 
 export const Streak = () => {
   return (
-    <div className='flex flex-col h-full py-2 justify-start items-center rounded-xl bg-slate-100 gap-y-5'>
+    <div className='hidden md:flex flex-col h-full py-2 justify-start items-center rounded-xl bg-slate-100 gap-y-5'>
       <div>
         <div className='flex items-center bg-white rounded-full px-2 py-1'>
           <Image src={coinLogo} className='w-4' alt='coin Logo' />

@@ -3,7 +3,7 @@ import { FaChevronUp, FaChevronDown } from 'react-icons/fa'
 import { CriteriaCardDetail } from './CriteriaCardDetail'
 import { CircularProgressBar } from './CircularProgressBar'
 
-const CriteriaCard = ({ color, score, total }) => {
+const CriteriaCard = ({ color, score, total, criteria }) => {
   const percentage = (score / total) * 100
 
   const [isOpen, setIsOpen] = useState(false)
@@ -26,7 +26,7 @@ const CriteriaCard = ({ color, score, total }) => {
           color={color}
         />
         <div className='ml-3'>
-          <h2 className='text-sm text-gray-600'>Criteria A:</h2>
+          <h2 className='text-sm text-gray-600'>Criteria {criteria}:</h2>
           <p className='text-lg font-semibold'>
             Understanding Knowledge Questions
           </p>

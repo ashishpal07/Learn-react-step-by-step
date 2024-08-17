@@ -5,16 +5,10 @@ import { FileUpload } from './FileUpload'
 export const FormComponent = () => {
   return (
     <div className='flex items-end'>
-      <div className='w-[70%]'>
+      <div className='w-7/10'>
         <FileUpload />
       </div>
-      {/* <div> */}
-        <Image
-          src={sideImage}
-          className='w-[30%] flex px-3'
-          alt='Main Photo'
-        />
-      {/* </div> */}
+      <Image src={sideImage} className='hidden lg:block w-[25%] px-3' alt='Main Photo' />
     </div>
   )
 }

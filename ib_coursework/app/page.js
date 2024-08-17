@@ -7,17 +7,17 @@ import { FormComponent } from '@/app/components/FormComponent'
 export default function Home () {
   return (
     <div className='bg-slate-100 flex justify-between'>
-      <div className='w-[5%]'>
+      <div className='md:w-[5%]'>
         <SideMenu />
       </div>
-      <div className='flex flex-col w-[55%] mt-20'>
+      <div className='flex flex-col mt-20 md:w-[75%] lg:w-[65%]'>
         <FormComponent />
 
         <CourseworkList />
 
         <FilteredCourseWorkList />
       </div>
-      <div className='w-[5%]'>
+      <div className='md:w-[5%]'>
         <Streak />
       </div>
     </div>

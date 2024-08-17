@@ -4,21 +4,21 @@ import { PdfDetails } from './PdfDetails'
 
 export const Coursework = ({ key, file }) => {
   return (
-    <div key={key} className='bg-slate-50 p-3 rounded-lg shadow-md flex gap-x-6'>
+    <div key={key} className='bg-slate-50 p-1 sm:p-3 rounded-lg flex mt-2 shadow-md'>
       <div className='mb-1'>
         <Image
           src={pdfSnap}
           alt={file.name}
-          className='rounded-md'
+          className='hidden rounded-md xl:block '
         />
       </div>
       <div>
-        <h3 className='font-bold text-lg mb-2'>
+        <h3 className='font-bold mb-1 sm:text-xl'>
           {file.name.length > 25
             ? `${file.name.substring(0, 25)}...`
             : file.name}
         </h3>
-        <p>How does the temperature of a Copper pipe affect the time it takes a magnet t...</p>
+        <p className='text-sm lg:text-lg text-slate-500'>How does the temperature of a Copper pipe affect the time it takes a magnet t...</p>
         <PdfDetails subject={file.courseworkDetails?.subject} wordCount={file.wordCount} />
       </div>
     </div>
