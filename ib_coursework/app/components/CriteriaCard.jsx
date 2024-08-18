@@ -3,9 +3,7 @@ import { FaChevronUp, FaChevronDown } from 'react-icons/fa'
 import { CriteriaCardDetail } from './CriteriaCardDetail'
 import { CircularProgressBar } from './CircularProgressBar'
 
-const CriteriaCard = ({ color, score, total, criteria }) => {
-  const percentage = (score / total) * 100
-
+const CriteriaCard = ({ color, score, total, criteria, toggle }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleOpen = () => {
@@ -13,21 +11,23 @@ const CriteriaCard = ({ color, score, total, criteria }) => {
   }
 
   return (
-    <div className='bg-white shadow-md rounded-lg p-4 mt-4'>
+    <div className='mt-4 bg-white shadow-md rounded-lg p-4'>
       <div
         className='flex justify-between items-center cursor-pointer'
         onClick={toggleOpen}
       >
         <CircularProgressBar
-          percentage={percentage}
-          score={score}
+          size={60}
+          strokeWidth={6}
+          progress={(score/total) * 100}
           total={total}
-          sizeClass={'w-16 h-16'}
+          score={score}
           color={color}
         />
+
         <div className='ml-3'>
           <h2 className='text-sm text-gray-600'>Criteria {criteria}:</h2>
-          <p className='text-lg font-semibold'>
+          <p className='text-sm xl:text-lg font-semibold'>
             Understanding Knowledge Questions
           </p>
         </div>
@@ -38,7 +38,7 @@ const CriteriaCard = ({ color, score, total, criteria }) => {
         </div>
       </div>
 
-      {isOpen && <CriteriaCardDetail />}
+      {(isOpen || toggle) && <CriteriaCardDetail />}
     </div>
   )
 }

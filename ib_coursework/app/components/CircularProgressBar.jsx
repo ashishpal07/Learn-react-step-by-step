@@ -1,30 +1,50 @@
+import React from 'react'
 
-export const CircularProgressBar = ({ percentage, score, total, sizeClass, color }) => {
+export const CircularProgressBar = ({
+  size,
+  strokeWidth,
+  progress,
+  total,
+  score,
+  color
+}) => {
+  const radius = (size - strokeWidth) / 2
+  const circumference = 2 * Math.PI * radius
+  const offset = circumference - (progress / 100) * circumference
+
   return (
-    <div className={`relative ${sizeClass}`}>
-      <svg className='absolute inset-0' viewBox='0 0 36 36'>
-        <path
-          className='text-gray-300'
-          d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831'
-          fill='none'
-          stroke='currentColor'
-          strokeWidth='3.8'
+    <div>
+      <svg height={size} width={size} className='block mx-auto'>
+        <circle
+          stroke='#e5e7eb' // light gray background circle
+          fill='transparent'
+          strokeWidth={strokeWidth}
+          r={radius}
+          cx={size / 2}
+          cy={size / 2}
         />
-        <path
-          className={`${color}`}
-          d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831'
-          fill='none'
-          stroke='currentColor'
-          strokeWidth='3.8'
-          strokeDasharray={`${percentage}, 100`}
+        <circle
+          stroke={`${color}`} // blue color for progress
+          fill='transparent'
+          strokeWidth={strokeWidth}
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          strokeLinecap='round'
+          r={radius}
+          cx={size / 2}
+          cy={size / 2}
+          className='transition-all duration-300'
         />
-      </svg>
-      <div className='absolute inset-0 flex items-center justify-center'>
-        <span className='text-sm font-semibold'>
+        <text
+          x='50%'
+          y='50%'
+          textAnchor='middle'
+          dy='.3em'
+          className='text-sm font-semibold fill-current text-blue-500'
+        >
           {score}/{total}
-        </span>
-      </div>
+        </text>
+      </svg>
     </div>
   )
 }

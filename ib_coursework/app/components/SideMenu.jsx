@@ -8,7 +8,7 @@ import faceIcon from '../../public/faceIcon.png'
 
 export const SideMenu = () => {
   return (
-    <div className='hidden md:flex flex-col h-full py-2 justify-between items-center rounded-xl bg-white m-2'>
+    <div className='hidden md:flex flex-col h-[97%] py-2 justify-between items-center rounded-xl bg-white m-2'>
       <div className='px-0 items-center flex flex-col justify-center gap-y-8'>
         <div>
           <Image src={zuaiLogo} className='w-14' alt='ZuAi Logo' />

@@ -5,7 +5,7 @@ import wordsLogo from "../../public/wordsLogo.png"
 import timeLogo from "../../public/timeLogo.png"
 import subjectLogo from "../../public/subjectLogo.png"
 
-export const PdfDetails = ({ wordCount, subject }) => {
+export const CourseWorkDetails = ({ wordCount, subject }) => {
   return (
     <div className="flex flex-wrap sm:gap-2 items-center text-sm font-semibold py-2 mt-1">
       <div className="flex items-center rounded-full bg-white p-1 sm:px-3 py-1 space-x-2">

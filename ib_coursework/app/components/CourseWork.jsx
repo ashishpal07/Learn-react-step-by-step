@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import pdfSnap from '../../public/pdfPhoto.png'
-import { PdfDetails } from './PdfDetails'
+import { CourseWorkDetails } from './CourseWorkDetails'
 
 export const Coursework = ({ key, file }) => {
   return (
@@ -19,7 +19,7 @@ export const Coursework = ({ key, file }) => {
             : file.name}
         </h3>
         <p className='text-sm lg:text-lg text-slate-500'>How does the temperature of a Copper pipe affect the time it takes a magnet t...</p>
-        <PdfDetails subject={file.courseworkDetails?.subject} wordCount={file.wordCount} />
+        <CourseWorkDetails subject={file.courseworkDetails?.subject} wordCount={file.wordCount} />
       </div>
     </div>
   )
