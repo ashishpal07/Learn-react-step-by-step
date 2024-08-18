@@ -15,7 +15,7 @@ export const FilteredCourseWorkList = () => {
   const [displayCount, setDisplayCount] = useState(4);
 
   const showMoreFiles = () => {
-    setDisplayCount((prevCount) => prevCount + 2);
+    setDisplayCount(files.length);
   };
 
   return (
@@ -45,7 +45,7 @@ export const FilteredCourseWorkList = () => {
             className="px-5 py-2 rounded-full bg-slate-150 text-slate-300 font-bold hover:bg-purple-700"
             onClick={showMoreFiles}
           >
-            View More
+            View all
           </button>
         </div>
       )}

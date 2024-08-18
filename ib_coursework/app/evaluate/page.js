@@ -13,7 +13,7 @@ export default function evaluate () {
         <div className='lg:w-[60%]'>
           <PdfViewer />
         </div>
-        <div className='lg:w-[40%]'>
+        <div className='mt-2 lg:w-[40%]'>
           <PerformanceSideBar />
         </div>
       </div>

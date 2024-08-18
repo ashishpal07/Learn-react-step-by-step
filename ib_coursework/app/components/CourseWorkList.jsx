@@ -10,7 +10,7 @@ export const CourseworkList = () => {
 
   // Function to show more files
   const showMoreFiles = () => {
-    setDisplayCount((prevCount) => prevCount + 2); // Increase the count by 2 (or any desired number)
+    setDisplayCount(files.length); // Increase the count by 2 (or any desired number)
   };
 
   return (

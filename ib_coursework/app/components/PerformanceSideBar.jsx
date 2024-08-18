@@ -18,7 +18,7 @@ export const PerformanceSideBar = () => {
     <div>
       <div className='ml-[-30px] lg:ml-0 lg:mt-0'>
         <OverallScoreCard />
-        <div className='flex flex-col-reverse sm:flex lg:flex-col'>
+        <div className='flex flex-col sm:flex lg:flex-col'>
           <div className='mt-5'>
             {colorScores.map((colorScore, index) => {
               return (

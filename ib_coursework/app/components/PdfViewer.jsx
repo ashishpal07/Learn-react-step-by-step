@@ -33,7 +33,7 @@ export const PdfViewer = () => {
   }, [])
 
   return (
-    <div className='flex flex-col items-center mb-10 mt-20 lg:mt-0'>
+    <div className='flex flex-col items-center mb-10 sm:mt-4 lg:mt-0'>
       <div className='mb-2 w-full items-center p-1 sm:p-2 bg-slate-50 rounded-tl-2xl rounded-tr-2xl'>
         <div className='rounded-full flex justify-between items-center px-2 text-slate-500 text-[10px] sm:text-[15px]'>
           <p className='bg-slate-200 p-2 rounded-full'>
@@ -44,10 +44,10 @@ export const PdfViewer = () => {
               onClick={() => setToggle(!toggle)}
               className='text-purple-700 font-semibold flex items-center'
             >
-              Expand & view your file{' '}
+              Expand & view your file
               <span className='ml-2'>
                 <FaLongArrowAltRight />
-              </span>{' '}
+              </span>
             </button>
           </div>
         </div>
@@ -59,7 +59,7 @@ export const PdfViewer = () => {
         )}
       </div>
       {toggle && (
-        <div className='w-full h-[250px] sm:h-[600px] shadow-md p-0 viewer-container mt'>
+        <div className='w-full h-[250px] sm:h-[600px] shadow-md py-3 px-2 viewer-container'>
           <Worker
             workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}
           >
