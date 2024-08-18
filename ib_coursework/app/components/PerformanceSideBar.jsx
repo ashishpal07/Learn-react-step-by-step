@@ -16,7 +16,7 @@ export const PerformanceSideBar = () => {
 
   return (
     <div>
-      <div className='ml-[-30px] lg:ml-0 mt-7 lg:mt-0'>
+      <div className='ml-[-30px] lg:ml-0 lg:mt-0'>
         <OverallScoreCard />
         <div className='flex flex-col-reverse sm:flex lg:flex-col'>
           <div className='mt-5'>

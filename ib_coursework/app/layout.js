@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/Navbar";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
         <div className="md:hidden block">
           <Navbar />
         </div>
+        <ToastContainer autoClose={4000} />
         {children}
       </body>
     </html>

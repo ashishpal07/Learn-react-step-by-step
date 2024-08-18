@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useStore } from '@/store/store'
 import { useDropzone } from 'react-dropzone'
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify'
 
 export const useFileUpload = () => {
   const addFile = useStore(state => state.addFile)
@@ -47,7 +49,9 @@ export const useFileUpload = () => {
 
   const handleSubmit = () => {
     if (!fileData || !courseworkType || !subject || !title) {
-      alert('Please fill in all fields and upload a file.')
+      toast.info('Please fill all the details!', {
+        position: 'top-center'
+      })
       return
     }
 
@@ -70,17 +74,35 @@ export const useFileUpload = () => {
       let storedFiles = JSON.parse(localStorage.getItem('files')) || []
       storedFiles.push(fileData)
       localStorage.setItem('files', JSON.stringify(storedFiles))
+      toast.success('file uploaded successfully', {
+        position: 'top-center',
+      })
     } catch (e) {
-      console.error('Error saving to localStorage', e)
+      console.error('Error while saving file to localStorage', e)
+      toast.error('Error while saving file to localStorage', {
+        position: 'top-center'
+      })
     }
   }
 
   useEffect(() => {
+    console.log('useEffect for loading files is running');
     try {
       const storedFiles = JSON.parse(localStorage.getItem('files')) || []
-      storedFiles.forEach(addFile)
+      storedFiles.forEach((file) => {
+        // Adding a check to see if the file already exists in the store
+        const fileExists = useStore.getState().files.some(
+          (storedFile) => storedFile.name === file.name
+        );
+        if (!fileExists) {
+          addFile(file);
+        }
+      });
     } catch (e) {
       console.error('Error loading from localStorage', e)
+      toast.error('Error while loading from localStorage', {
+        position: 'top-center'
+      })
     }
   }, [addFile])
 

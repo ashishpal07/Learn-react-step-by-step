@@ -26,8 +26,8 @@ const CriteriaCard = ({ color, score, total, criteria, toggle }) => {
         />
 
         <div className='ml-3'>
-          <h2 className='text-sm text-gray-600'>Criteria {criteria}:</h2>
-          <p className='text-sm xl:text-lg font-semibold'>
+          <h2 className='text-[10px] text-gray-600'>Criteria {criteria}:</h2>
+          <p className='text-[14px] md:text-md font-semibold'>
             Understanding Knowledge Questions
           </p>
         </div>

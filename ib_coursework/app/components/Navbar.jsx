@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import zuaiLogo from '../../public/zuaiLogo.png'
 import { useState } from 'react'
+import Link from 'next/link'
 
 export const Navbar = () => {
   const [leftOpen, setLeftOpen] = useState(false)
@@ -27,7 +28,7 @@ export const Navbar = () => {
       </div>
       {rightOpen && (
         <div className='p-3'>
-          <p className='border-b p-2'>Home</p>
+          <Link href={"/"} ><p className='border-b p-2'>Home</p></Link>
           <p className='border-b p-2'>Coins</p>
           <p className='border-b p-2'>streak</p>
           <p className='border-b p-2'>Calendar</p>
@@ -35,7 +36,7 @@ export const Navbar = () => {
       )}
       {leftOpen && (
         <div className='p-3'>
-          <p className='border-b p-2'>Home</p>
+          <Link href={"/"} ><p className='border-b p-2'>Home</p></Link>
           <p className='border-b p-2'>Menu</p>
           <p className='border-b p-2'>Bookmark</p>
           <p className='border-b p-2'>Support</p>
