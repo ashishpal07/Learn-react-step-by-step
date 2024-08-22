@@ -38,7 +38,7 @@ I have uses zod library for input validation so here you neet to insert in body 
 this will give you response "User registered successfully!"
 ```
 
-2.Register user API
+2.Login user API
 ```
 http://localhost:<your_port_number>/api/login => POST
 
