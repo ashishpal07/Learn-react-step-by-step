@@ -22,7 +22,7 @@ Steps to run this project:
 2. Setup database settings inside `data-source.ts` file
 3. Run `npm start` command
 
-# API END POINTS DOCS  (I have considerd only sinle role can given to each user for simplicity but yes in real life we have list of roles have per user)
+# API END POINTS DOCS  (I have considerd only single role can given to each user for simplicity but yes in real life we have list of roles have per user)
 USER API END POINTS
 1.Register user API
 ```
