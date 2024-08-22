@@ -42,7 +42,7 @@ this will give you response "User registered successfully!"
 ```
 http://localhost:<your_port_number>/api/login => POST
 
-I have uses zod library for input validation so here you neet to insert in body eg.
+I have uses zod library for input validation so here you neeed to insert in body eg.
 {
   "userName": "gokapture@gmail.com",
   "password": "gokapture"
